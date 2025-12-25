@@ -218,6 +218,26 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
         
+        .result-score {
+            text-align: center;
+            color: #a0aec0;
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .near-badge {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 0.6rem;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            color: #f7fafc;
+            font-weight: 700;
+            vertical-align: middle;
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,0.2);
+        }
+        
         .yoksul {
             background: linear-gradient(135deg, #7b341e, #c53030);
             color: #fed7d7;
@@ -673,6 +693,7 @@
             </div>
             
             <div id="resultClass" class="result-class"></div>
+            <div id="resultScore" class="result-score" aria-live="polite"></div>
             
             <button class="restart-btn" id="restartBtn">
                 <i class="fas fa-sync-alt"></i> Testi Yeniden Yap
@@ -688,6 +709,7 @@
             const form = document.getElementById('socioEconomicTest');
             const resultContainer = document.getElementById('resultContainer');
             const resultClass = document.getElementById('resultClass');
+            const resultScore = document.getElementById('resultScore');
             const resetBtn = document.getElementById('resetBtn');
             const restartBtn = document.getElementById('restartBtn');
             const options = document.querySelectorAll('.option');
@@ -695,7 +717,11 @@
             // Seçeneklere tıklanınca seçili hale getirme
             options.forEach(option => {
                 const radioInput = option.querySelector('input[type="radio"]');
-                option.addEventListener('click', () => {
+                option.addEventListener('click', (e) => {
+                    // Eğer kullanıcı doğrudan inputa tıklarsa event iki kez tetiklenmesin
+                    if (e.target.tagName.toLowerCase() === 'input') {
+                        // input zaten checked olacak, yine de class yönetimi yapacağız
+                    }
                     // Aynı sorudaki diğer seçeneklerden seçimi kaldır
                     const question = option.closest('.question');
                     question.querySelectorAll('.option').forEach(opt => {
@@ -723,11 +749,11 @@
                 // Puanları hesapla
                 const score = calculateScore();
                 
-                // Sonucu belirle
+                // Sonucu belirle (yakınlık kontrolü dahil)
                 const result = determineClass(score);
                 
                 // Sonuçları göster
-                showResult(result);
+                showResult(result, score);
                 
                 // Sonuç bölümüne kaydır
                 resultContainer.scrollIntoView({ behavior: 'smooth' });
@@ -780,40 +806,75 @@
                 return totalScore;
             }
             
-            // Sınıf belirleme
+            // Sınıf belirleme ve "yakınlık" kontrolü
             function determineClass(score) {
-                if (score <= 20) {
-                    return {
-                        className: "Derin Yoksul / Yoksul Sınıf",
-                        class: "yoksul"
-                    };
-                } else if (score <= 29) {
-                    return {
-                        className: "Alt-Orta Sınıf",
-                        class: "alt-orta"
-                    };
-                } else if (score <= 38) {
-                    return {
-                        className: "Orta Sınıf",
-                        class: "orta"
-                    };
-                } else if (score <= 47) {
-                    return {
-                        className: "Üst-Orta Sınıf",
-                        class: "ust-orta"
-                    };
-                } else {
-                    return {
-                        className: "Zengin Sınıf",
-                        class: "zengin"
-                    };
+                // proximityThreshold: diğer sınıfa yakın sayılacak maksimum puan farkı
+                const proximityThreshold = 2; // kullanıcı istediği gibi 1-2 puan aralığı burada ayarlanabilir
+                
+                // Sınıf aralıkları (min ve max dahil)
+                const classes = [
+                    { name: "Derin Yoksul / Yoksul Sınıf", short: "Yoksul", css: "yoksul", min: 11, max: 20 },
+                    { name: "Alt-Orta Sınıf", short: "Alt-Orta", css: "alt-orta", min: 21, max: 29 },
+                    { name: "Orta Sınıf", short: "Orta", css: "orta", min: 30, max: 38 },
+                    { name: "Üst-Orta Sınıf", short: "Üst-Orta", css: "ust-orta", min: 39, max: 47 },
+                    { name: "Zengin Sınıf", short: "Zengin", css: "zengin", min: 48, max: 55 }
+                ];
+                
+                // Hangisine düştüğünü bul
+                let idx = classes.findIndex(c => score >= c.min && score <= c.max);
+                if (idx === -1) {
+                    // Güvenlik: eğer aralık dışıysa uç sınıflara ata
+                    if (score < classes[0].min) idx = 0;
+                    else idx = classes.length - 1;
                 }
+                
+                const current = classes[idx];
+                let near = null;
+                
+                // Alt sınıfa yakın mı? (mevcut sınıfın min değerine yakınlık)
+                if (idx > 0) {
+                    const lower = classes[idx - 1];
+                    const distanceToLowerBoundary = score - current.min; // 0 veya pozitif
+                    if (distanceToLowerBoundary <= proximityThreshold) {
+                        near = lower;
+                    }
+                }
+                
+                // Üst sınıfa yakın mı? (mevcut sınıfın max değerine yakınlık)
+                if (!near && idx < classes.length - 1) {
+                    const upper = classes[idx + 1];
+                    const distanceToUpperBoundary = current.max - score; // 0 veya pozitif
+                    if (distanceToUpperBoundary <= proximityThreshold) {
+                        near = upper;
+                    }
+                }
+                
+                return {
+                    className: current.name,
+                    class: current.css,
+                    nearClass: near ? near : null
+                };
             }
             
-            // Sonucu gösterme (sadece sınıf adı gösterilir)
-            function showResult(result) {
-                resultClass.textContent = result.className;
+            // Sonucu gösterme (ana sınıf + varsa yakın sınıf bilgisi)
+            function showResult(result, score) {
+                // Temel sınıf metni
+                let label = result.className;
+                
+                // Eğer yakın bir sınıf varsa, parantez içinde göster
+                if (result.nearClass) {
+                    // Örnek: "Orta Sınıf (Alt-Orta sınıfına yakın)"
+                    label += ` <span class="near-badge"> ${result.nearClass.short} sınıfına yakın</span>`;
+                }
+                
+                // innerHTML kullanalım çünkü badge HTML içeriyor
+                resultClass.innerHTML = label;
+                // Sınıf stilini ayarla
                 resultClass.className = `result-class ${result.class}`;
+                
+                // Puan bilgisini göster (isteğe bağlı ama faydalı)
+                resultScore.textContent = `Puanınız: ${score} / 55`;
+                
                 resultContainer.style.display = 'block';
             }
         });
