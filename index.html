@@ -591,32 +591,32 @@
                     </div>
                 </div>
                 
-                <!-- Soru 5: Sosyal Güvence ve Sağlık -->
+                <!-- Soru 5: Birleştirilmiş Sağlık ve Protein Erişimi -->
                 <div class="question">
                     <div class="question-title">
                         <span class="question-number">5</span>
-                        <span>Sağlık hizmetlerine erişiminiz ve sosyal güvenceniz (sağlık sigortası) ile ilgili durumunuz nedir?</span>
+                        <span>Sağlık hizmetlerine ve protein kaynaklarına (kırmızı et, balık gibi gıdalara) erişim durumunuz nedir?</span>
                     </div>
                     <div class="options">
                         <label class="option">
                             <input type="radio" name="q5" value="-1" required>
-                            <span class="option-label">Hiçbir sosyal güvencem yok, sağlık hizmetlerine erişimim kısıtlı</span>
+                            <span class="option-label">Hiçbir sosyal güvencem yok, sağlık hizmetlerine erişimim kısıtlı. Neredeyse hiç kırmızı et veya balık içeren yemek yiyemiyorum.</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q5" value="2">
-                            <span class="option-label">Temel devlet sigortam var ama özel sağlık hizmetlerini karşılayamam</span>
+                            <span class="option-label">Temel sigortam var ama özel sağlık hizmetlerini karşılayamam, Ayda 1-2 kez kırmızı et/balık yiyebiliyorum.</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q5" value="3">
-                            <span class="option-label">Düzenli sigortam var, gerekirse özel sağlık hizmeti alabilirim</span>
+                            <span class="option-label">Düzenli sigortam var, maddi durumumu sarsa da özel sağlık hizmeti alabilirim. Haftada 1-2 kez kırmızı et veya balık yiyebilirim.</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q5" value="4">
-                            <span class="option-label">Tam kapsamlı özel sağlık sigortam var, en iyi sağlık hizmetlerine erişebilirim</span>
+                            <span class="option-label">Tam kapsamlı özel sağlık sigortam var, en iyi sağlık hizmetlerine erişebilirim. İstediğim sıklıkta protein kaynaklarına; kırmızı ete, balığa ulaşabiliyorum.</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q5" value="5">
-                            <span class="option-label">En üst düzey özel sağlık sigortalarına sahibim, yurtdışında bile tedavi olabilirim</span>
+                            <span class="option-label">En üst düzey özel sağlık sigortalarına sahibim, yurtdışında bile tedavi olabilirim. en yüksek protein oranlarına sahip eşsiz gıdaları rahatlıkla tüketebilirim.</span>
                         </label>
                     </div>
                 </div>
@@ -673,32 +673,6 @@
                         <label class="option">
                             <input type="radio" name="q7" value="4">
                             <span class="option-label">Hayır, maddi durumumdan dolayı hiç dışlanmadım, böyle bir şey yaşamadım</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <!-- Soru 8: Protein Kaynaklarına Erişim -->
-                <div class="question">
-                    <div class="question-title">
-                        <span class="question-number">8</span>
-                        <span>Protein kaynaklarına (kırmızı et, balık gibi gıdalara) erişim imkanınız nedir?</span>
-                    </div>
-                    <div class="options">
-                        <label class="option">
-                            <input type="radio" name="q8" value="-2" required>
-                            <span class="option-label">Neredeyse hiç kırmızı et veya balık içeren yemek yiyemiyorum. bulgur veya makarna ağırlıklı beslenmek zorunda kalıyorum</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q8" value="-1">
-                            <span class="option-label">Ayda 1-2 kez kırmızı et/balık yiyebiliyorum</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q8" value="2">
-                            <span class="option-label">Haftada 1-2 kez kırmızı et veya balık yiyebiliyorum</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q8" value="4">
-                            <span class="option-label">İstediğim sıklıkta protein kaynaklarına; kırmızı ete, balığa ulaşabiliyorum</span>
                         </label>
                     </div>
                 </div>
@@ -818,7 +792,7 @@
                 return true;
             }
             
-            // Puan hesaplama (8 soru)
+            // Puan hesaplama (7 soru)
             function calculateScore() {
                 let totalScore = 0;
                 const radioInputs = document.querySelectorAll('input[type="radio"]:checked');
@@ -830,13 +804,13 @@
                 return totalScore;
             }
             
-            // Sınıf belirleme (8 soru)
+            // Sınıf belirleme (7 soru)
             function determineClass(score) {
                 let className = "";
                 let classType = "";
                 let additionalNote = "";
                 
-                // Sınıf eşikleri (8 soru için güncellendi)
+                // Sınıf eşikleri (7 soru için güncellendi)
                 if (score <= 0) {
                     className = "Derin Yoksul / Yoksul Sınıf";
                     classType = "yoksul";
