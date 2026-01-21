@@ -467,301 +467,237 @@
         
         <form id="socioEconomicTest">
             <div class="question-container">
-                <!-- Soru 1: Gelir Kaynağı -->
+                <!-- Soru 1: Birleştirilmiş Gelir Kaynağı ve İş Tanımı -->
                 <div class="question">
                     <div class="question-title">
                         <span class="question-number">1</span>
-                        <span>Gelir kaynağınızı aşağıdakilerden hangisini en iyi tanımlar?</span>
+                        <span>Gelir kaynağınızı aşağıdakilerden hangisini en iyi tanımlar ve işinizin tanımı nedir?</span>
                     </div>
                     <div class="options">
                         <label class="option">
                             <input type="radio" name="q1" value="-1" required>
-                            <span class="option-label">Hiç gelirim yok, öğrenciyim veya sosyal yardımlarla, kredi-burs ile, aile veya yabancı kişilerin yardımı ile geçiniyorum</span>
+                            <span class="option-label">Çalışmıyorum. Hiç gelirim yok, öğrenciyim veya sosyal yardımlarla, kredi-burs ile, aile veya yabancı kişilerin yardımı ile geçiniyorum. işsizim, ev hanımıyım vb.</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q1" value="-1">
-                            <span class="option-label">Part-time/düzensiz, güvencesiz işler, gündelik işler</span>
+                            <span class="option-label">Part-time/düzensiz, güvencesiz, gündelik işlerde çalışıyorum veya ağır ve tehlikeli işlerde çalışıyorum (inşaat, madencilik, yüksek riskli fiziksel işler)</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q1" value="3">
-                            <span class="option-label">Düzenli maaşlı (asgari veya üzeri) ama güvencesiz işler</span>
+                            <span class="option-label">Düzenli maaşlı (asgari veya üzeri) ama güvencesiz işler veya Fiziksel olarak ağır ama nispeten daha az tehlikeli işlerde çalışıyorum</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q1" value="4">
-                            <span class="option-label">Düzenli ve GÜVENCELİ bir işim var</span>
+                            <span class="option-label">Düzenli ve GÜVENCELİ bir işim var veya fiziksel olarak hafif ama stresli işlerde çalışıyorum</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q1" value="5">
-                            <span class="option-label">Çok güvenceli ve iyi bir işte çalışıyorum, sigortam tam, maaşım yüksek</span>
+                            <span class="option-label">Çok güvenceli ve iyi bir işte çalışıyorum, sigortam tam. yüksek maaşlı bir işim var, Ofis ortamı vb. rahat bir iş ortamım var.</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q1" value="6">
-                            <span class="option-label">Yüksek maaşlı bir işim var veya kendi işletmem, kendi işim.</span>
+                            <span class="option-label">kendi işletmem var,dükkan-şirket sahibiyim, çalışmama bile gerek kalmadan para kazandıran kendi işlerim, yatırımlarım var</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 2: İşin Tanımı (Ağır/Tehlikeli İş) -->
+                <!-- Soru 2: Birleştirilmiş Birikim ve Tasarruf -->
                 <div class="question">
                     <div class="question-title">
                         <span class="question-number">2</span>
-                        <span>Yaptığınız işin tanımı nedir?</span>
+                        <span>Sahip olduğunuz birikim ve mülklerin durumu nedir, gelirinizden ne kadar para ayırabiliyorsunuz?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q2" value="-3" required>
-                            <span class="option-label">Çalışmıyorum, (öğrenci, işsiz, ev hanımı vb.)</span>
+                            <input type="radio" name="q2" value="1" required>
+                            <span class="option-label">Hiçbir birikimim veya mülküm yok, hiç para ayıramıyorum. gelirim temel ihtiyaçlar için bile yetersiz kalıyor.</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q2" value="-2">
-                            <span class="option-label">Ağır ve tehlikeli işlerde çalışıyorum (inşaat, madencilik, yüksek riskli fiziksel işler)</span>
+                            <input type="radio" name="q2" value="-1">
+                            <span class="option-label">Sadece acil ihtiyaçları karşılayacak kadar küçük bir birikimim var, Çok az para ayırabiliyorum, ancak küçük şeyler için. (mülküm var/yok)</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q2" value="1">
-                            <span class="option-label">Fiziksel olarak ağır ama nispeten daha az tehlikeli işlerde çalışıyorum</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q2" value="2">
-                            <span class="option-label">Fiziksel olarak hafif ama stresli işlerde çalışıyorum</span>
+                            <input type="radio" name="q2" value="3">
+                            <span class="option-label">Birkaç aylık asgari geçim tutarını karşılayacak birikimim var, orta düzeyde para ayırabiliyorum. (mülküm var/yok)</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q2" value="4">
-                            <span class="option-label">Ofis ortamında veya fiziksel riski düşük, rahat bir iş ortamım var. güvenceli işlerde çalışıyorum</span>
+                            <span class="option-label">Birkaç yıllık geçimimi sağlayacak önemli birikimim ve mülküm var, Önemli miktarda para ayırabiliyorum, lüks sayılabilecek harcamalar yapabilirim</span>
                         </label>
                         <label class="option">
                             <input type="radio" name="q2" value="5">
-                            <span class="option-label">dükkan-şirket sahibiyim, çalışmama bile gerek kalmadan para kazandıran kendi işlerim, yatırımlarım var</span>
+                            <span class="option-label">Çalışmadan geçinebileceğim düzeyde birikim veya birden fazla mülküm var, Gelirimimin büyük kısmını tasarruf ve yatırıma ayırabiliyorum, istediğim her şeyi alabilirim</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 3: Servet ve Varlıklar -->
+                <!-- Soru 3: Konut Durumu (Detaylandırılmış) -->
                 <div class="question">
                     <div class="question-title">
                         <span class="question-number">3</span>
-                        <span>Sahip olduğunuz birikim ve mülklerin durumu nedir?</span>
-                    </div>
-                    <div class="options">
-                        <label class="option">
-                            <input type="radio" name="q3" value="1" required>
-                            <span class="option-label">Hiçbir birikimim veya mülküm yok</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q3" value="-1">
-                            <span class="option-label">Sadece acil ihtiyaçları karşılayacak kadar küçük bir birikimim var (mülküm var ya da yok)</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q3" value="3">
-                            <span class="option-label">Birkaç aylık asgari geçim tutarını karşılayacak birikimim var (mülküm var ya da yok)</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q3" value="4">
-                            <span class="option-label">Birkaç yıllık geçimimi sağlayacak önemli birikimim ve mülküm var</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q3" value="5">
-                            <span class="option-label">Çalışmadan geçinebileceğim düzeyde birikim ve/veya birden fazla mülküm var</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <!-- Soru 4: Birleştirilmiş Tasarruf ve Uzun Vadeli Planlama -->
-                <div class="question">
-                    <div class="question-title">
-                        <span class="question-number">4</span>
-                        <span>Geliriniz, temel ihtiyaçlarınızı karşıladıktan sonra size ne tür imkanlar sağlıyor, ne kadar para ayırabiliyorsunuz?</span>
-                    </div>
-                    <div class="options">
-                        <label class="option">
-                            <input type="radio" name="q4" value="-1" required>
-                            <span class="option-label">Hiç para ayıramıyorum. gelirim temel ihtiyaçlar için bile yetersiz kalıyor</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q4" value="2">
-                            <span class="option-label">Çok az para ayırabiliyorum, ancak küçük şeyler için</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q4" value="3">
-                            <span class="option-label">Orta düzeyde para ayırabiliyorum</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q4" value="4">
-                            <span class="option-label">Önemli miktarda ayırabiliyorum, lüks sayılabilecek harcamalar yapabilirim</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="q4" value="5">
-                            <span class="option-label">Gelirimimin büyük kısmını tasarruf ve yatırıma ayırabiliyorum, istediğim her şeyi alabilirim</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <!-- Soru 5: Konut Durumu (Detaylandırılmış) -->
-                <div class="question">
-                    <div class="question-title">
-                        <span class="question-number">5</span>
                         <span>Konut (ev) durumunuzla ilgili en doğru ifade hangisidir?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q5" value="-2" required>
+                            <input type="radio" name="q3" value="-2" required>
                             <span class="option-label">Kalacak yerim yok veya sokakta/barınakta, evsiz yurdunda kalıyorum</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q5" value="-1.5">
+                            <input type="radio" name="q3" value="-1.5">
                             <span class="option-label">Alçısız, sıvasız, rutubetli, küflü, sağlıksız bir evde kalıyorum (kiracı veya ücretsiz kalınan bir ev - aile evi, gecekondu)</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q5" value="3">
+                            <input type="radio" name="q3" value="3">
                             <span class="option-label">Mütevazı, orta halli bir evde kalıyorum (kiracı veya aile evi, kendi evim)</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q5" value="4">
+                            <input type="radio" name="q3" value="4">
                             <span class="option-label">Evim var ya da kredi ile (taksit ödeyerek) kendi evimde oturuyorum veya kaliteli, iyi bir evde kiracıyım</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q5" value="5">
+                            <input type="radio" name="q3" value="5">
                             <span class="option-label">Borçsuz olarak kendi evimde oturuyorum, konut durumum fazlasıyla iyi ve kaliteli - birden fazla mülküm var</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 6: Aylık Gelir -->
+                <!-- Soru 4: Aylık Gelir -->
                 <div class="question">
                     <div class="question-title">
-                        <span class="question-number">6</span>
+                        <span class="question-number">4</span>
                         <span>Aylık geliriniz ne kadar?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q6" value="-3" required>
+                            <input type="radio" name="q4" value="-3" required>
                             <span class="option-label">28 bin veya altı</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q6" value="-2">
+                            <input type="radio" name="q4" value="-2">
                             <span class="option-label">28 bin ve üzeri (28 ila 55 bin arası)</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q6" value="3">
+                            <input type="radio" name="q4" value="3">
                             <span class="option-label">55 bin ve üzeri (55 ila 80 bin arası)</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q6" value="4">
+                            <input type="radio" name="q4" value="4">
                             <span class="option-label">80 bin ve üzeri (80 ila 120 bin arası)</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q6" value="5">
+                            <input type="radio" name="q4" value="5">
                             <span class="option-label">120 bin ve üstü</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 7: Sosyal Güvence ve Sağlık -->
+                <!-- Soru 5: Sosyal Güvence ve Sağlık -->
                 <div class="question">
                     <div class="question-title">
-                        <span class="question-number">7</span>
+                        <span class="question-number">5</span>
                         <span>Sağlık hizmetlerine erişiminiz ve sosyal güvenceniz (sağlık sigortası) ile ilgili durumunuz nedir?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q7" value="-1" required>
+                            <input type="radio" name="q5" value="-1" required>
                             <span class="option-label">Hiçbir sosyal güvencem yok, sağlık hizmetlerine erişimim kısıtlı</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q7" value="2">
+                            <input type="radio" name="q5" value="2">
                             <span class="option-label">Temel devlet sigortam var ama özel sağlık hizmetlerini karşılayamam</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q7" value="3">
+                            <input type="radio" name="q5" value="3">
                             <span class="option-label">Düzenli sigortam var, gerekirse özel sağlık hizmeti alabilirim</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q7" value="4">
+                            <input type="radio" name="q5" value="4">
                             <span class="option-label">Tam kapsamlı özel sağlık sigortam var, en iyi sağlık hizmetlerine erişebilirim</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q7" value="5">
+                            <input type="radio" name="q5" value="5">
                             <span class="option-label">En üst düzey özel sağlık sigortalarına sahibim, yurtdışında bile tedavi olabilirim</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 8: Temel Yaşam Güvenliği (Sokakta Kalma Riski) -->
+                <!-- Soru 6: Temel Yaşam Güvenliği (Sokakta Kalma Riski) -->
                 <div class="question">
                     <div class="question-title">
-                        <span class="question-number">8</span>
+                        <span class="question-number">6</span>
                         <span>Geçmişte sokakta kalmak zorunda kaldınız mı veya şu an böyle bir riskiniz var mı?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q8" value="-2" required>
+                            <input type="radio" name="q6" value="-2" required>
                             <span class="option-label">Evet, geçmişte sokakta kaldım veya şu an bu riskle karşı karşıyayım</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q8" value="-1">
+                            <input type="radio" name="q6" value="-1">
                             <span class="option-label">Şu an böyle bir risk yok ama gelirim kesilirse bu risk oluşabilir</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q8" value="3">
+                            <input type="radio" name="q6" value="3">
                             <span class="option-label">Gelirim kesilirse bir süre dayanabilirim ama uzun vadede risk var</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q8" value="4">
+                            <input type="radio" name="q6" value="4">
                             <span class="option-label">Böyle bir riskim yok, gelirim kesilse bile birikimlerimle idare edebilirim</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q8" value="5">
+                            <input type="radio" name="q6" value="5">
                             <span class="option-label">Hiçbir şekilde böyle bir riskim yok, mülklerim ve birikimlerim beni koruyor</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 9: Sosyal Dışlanma -->
+                <!-- Soru 7: Sosyal Dışlanma -->
                 <div class="question">
                     <div class="question-title">
-                        <span class="question-number">9</span>
+                        <span class="question-number">7</span>
                         <span>Sosyal dışlanma durumunuz nedir, daha önce hiç sosyal dışlanma yaşadınız mı?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q9" value="-2" required>
+                            <input type="radio" name="q7" value="-2" required>
                             <span class="option-label">Evet, maddi durumumdan dolayı sık sık dışlandım, insanların tiksinir bakışlarına ve tavırlarına maruz kaldım</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q9" value="-1">
+                            <input type="radio" name="q7" value="-1">
                             <span class="option-label">Evet, maddi durumumdan dolayı dışlandığım oldu ama ara sıra, yoğun olmayan bir derecede</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q9" value="3">
+                            <input type="radio" name="q7" value="3">
                             <span class="option-label">Nadir, maddi durumumdan dolayı hiç denilebilecek kadar az dışlandım veya dışlanmadım</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q9" value="4">
+                            <input type="radio" name="q7" value="4">
                             <span class="option-label">Hayır, maddi durumumdan dolayı hiç dışlanmadım, böyle bir şey yaşamadım</span>
                         </label>
                     </div>
                 </div>
                 
-                <!-- Soru 10: Protein Kaynaklarına Erişim -->
+                <!-- Soru 8: Protein Kaynaklarına Erişim -->
                 <div class="question">
                     <div class="question-title">
-                        <span class="question-number">10</span>
+                        <span class="question-number">8</span>
                         <span>Protein kaynaklarına (kırmızı et, balık gibi gıdalara) erişim imkanınız nedir?</span>
                     </div>
                     <div class="options">
                         <label class="option">
-                            <input type="radio" name="q10" value="-2" required>
+                            <input type="radio" name="q8" value="-2" required>
                             <span class="option-label">Neredeyse hiç kırmızı et veya balık içeren yemek yiyemiyorum. bulgur veya makarna ağırlıklı beslenmek zorunda kalıyorum</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q10" value="-1">
+                            <input type="radio" name="q8" value="-1">
                             <span class="option-label">Ayda 1-2 kez kırmızı et/balık yiyebiliyorum</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q10" value="2">
+                            <input type="radio" name="q8" value="2">
                             <span class="option-label">Haftada 1-2 kez kırmızı et veya balık yiyebiliyorum</span>
                         </label>
                         <label class="option">
-                            <input type="radio" name="q10" value="4">
+                            <input type="radio" name="q8" value="4">
                             <span class="option-label">İstediğim sıklıkta protein kaynaklarına; kırmızı ete, balığa ulaşabiliyorum</span>
                         </label>
                     </div>
@@ -882,7 +818,7 @@
                 return true;
             }
             
-            // Puan hesaplama (10 soru)
+            // Puan hesaplama (8 soru)
             function calculateScore() {
                 let totalScore = 0;
                 const radioInputs = document.querySelectorAll('input[type="radio"]:checked');
@@ -894,13 +830,13 @@
                 return totalScore;
             }
             
-            // Sınıf belirleme (10 soru, maksimum puan: 44, minimum puan: -14.5)
+            // Sınıf belirleme (8 soru)
             function determineClass(score) {
                 let className = "";
                 let classType = "";
                 let additionalNote = "";
                 
-                // Sınıf eşikleri
+                // Sınıf eşikleri (8 soru için güncellendi)
                 if (score <= 0) {
                     className = "Derin Yoksul / Yoksul Sınıf";
                     classType = "yoksul";
